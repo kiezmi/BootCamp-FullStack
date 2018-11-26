@@ -1,0 +1,21 @@
+{
+  "name": "test-javascrip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test-watch": "jest --watchAll"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.22.2"
+  },
+  "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "jest": "^23.6.0",
+    "validator": "^10.8.0"
+  }
+}
