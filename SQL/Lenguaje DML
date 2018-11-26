@@ -1,0 +1,45 @@
+1 Utilizando la base de datos Sakila (BD de Pruebas de MySQL) Extraer todos los actores de la tabla actors.
+
+USE Sakila;
+SELECT * FROM actor;
+
+2 De la tabla actors queremos conocer todos los nombres existentes en la tabla sin que se repita para ello utilizaremos DISTINCT.
+
+SELECT DISTINCT first_name  FROM actor;
+
+3 De la tabla film queemos obtenter una relación de películas que cumplan las siguientes características:
+rental_duration = 6
+rental_rate >=2.99
+
+SELECT * FROM film WHERE rental_duration = 6 && rental_rate >=2.99;
+
+4 De la tabla film queremos obtener una relación de la peliculas que tengan un replacement_cost entre 15.99 y 22.99
+
+SELECT * FROM film WHERE replacement_cost  BETWEEN 15.99 AND 22.99;
+
+5 Queremos Obtener todos los customers mediante el filtro de pertenencia a conjuntos IN que cumpla los siguientes requisitos.
+Pertenecen al store 1
+Y su first_name = MARY, o NANCY o DONNA.
+
+SELECT * FROM customer WHERE store_id IN(SELECT store_id FROM customer WHERE first_name="MARY" OR first_name="NANCY" OR first_name="DONNA");
+
+6 Queremos saber que clientes alquilaron películas para ello debemos utilizar inner join entre las tablas CUSTOMER Y rental
+
+SELECT customer.first_name FROM customer INNER JOIN rental on customer.customer_id = rental.customer_id GROUP BY customer.first_name;
+
+7 Queremos saber cual es el cliente que más películas a alquilado.
+
+//Solo consigo sacar el maximo numero de Alquileres_Realizados
+SELECT MAX(Alquileres_Realizados) FROM (SELECT customer_id, COUNT(*) AS Alquileres_Realizados FROM rental GROUP BY customer_id) AS Virtual_table;
+//De esta manera funciona
+SELECT customer_id AS ID, COUNT(*) AS Alquileres_Realizados FROM rental GROUP BY customer_id ORDER BY Alquileres_Realizados DESC LIMIT 1;
+
+8 Queremos saber que alquileres están atrasados en su devolución, para ello debemos buscar en la tabla del rental las peliculas con una fecha de regreso = null, 
+y que la fecha de alquiler supere el tiempo o cantidad de dias establecidos que puede conservar el cliente la pelicula. 
+Si se cumple esta condición, entonces el cliente esta adeudando la película y se deberá mostrar en el listado el nombre del a pelicula junto con el nombre del cliente,
+ número de teléfono y email. 
+También mostraremos si la película esta paǵada, en que fecha se pago y cuanto se pago.
+//Todos los nulos
+SELECT * FROM rental WHERE return_date IS NULL
+// Detectar cuantos dias faltan
+SELECT TIMESTAMPDIFF(day, rental_date, now()) AS Cantidad_Dias FROM rental; 
