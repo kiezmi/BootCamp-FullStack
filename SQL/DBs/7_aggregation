@@ -1,0 +1,27 @@
+{
+    "_id" : ObjectId("5ba20c8e00b3f4a4607ba64a"),
+    "cust_id" : "A123",
+    "amount" : 500,
+    "status" : "A"
+}
+
+{
+    "_id" : ObjectId("5ba20c8e00b3f4a4607ba64c"),
+    "cust_id" : "A123",
+    "amount" : 250,
+    "status" : "A"
+}
+
+{
+    "_id" : ObjectId("5ba20c8e00b3f4a4607ba64e"),
+    "cust_id" : "B212",
+    "amount" : 200,
+    "status" : "A"
+}
+
+{
+    "_id" : ObjectId("5ba20c8e00b3f4a4607ba650"),
+    "cust_id" : "A123",
+    "amount" : 300,
+    "status" : "D"
+}

@@ -1,0 +1,67 @@
+
+{
+  "_id" : ObjectId("5ba205cc00b3f4a4607ba363"),
+  "item" : "journal",
+  "qty" : 25,
+  "tags" : [
+    "blank",
+    "red"
+  ],
+  "dim_cm" : [
+    14,
+    21
+  ]
+}
+{
+  "_id" : ObjectId("5ba205cc00b3f4a4607ba365"),
+  "item" : "notebook",
+  "qty" : 50,
+  "tags" : [
+    "red",
+    "blank"
+  ],
+  "dim_cm" : [
+    14,
+    21
+  ]
+}
+{
+  "_id" : ObjectId("5ba205cc00b3f4a4607ba367"),
+  "item" : "paper",
+  "qty" : 100,
+  "tags" : [
+    "red",
+    "blank",
+    "plain"
+  ],
+  "dim_cm" : [
+    14,
+    21
+  ]
+}
+{
+  "_id" : ObjectId("5ba205cc00b3f4a4607ba369"),
+  "item" : "planner",
+  "qty" : 75,
+  "tags" : [
+    "blank",
+    "red"
+  ],
+  "dim_cm" : [
+    22.85,
+    30
+  ]
+}
+
+{
+  "_id" : ObjectId("5ba205cc00b3f4a4607ba36b"),
+  "item" : "postcard",
+  "qty" : 45,
+  "tags" : [
+    "blue"
+  ],
+  "dim_cm" : [
+    10,
+    15.25
+  ]
+}
