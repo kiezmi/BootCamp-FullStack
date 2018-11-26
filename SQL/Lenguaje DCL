@@ -1,0 +1,27 @@
+1 Inserta una nueva película.
+
+INSERT INTO film VALUE (default,'titulo','descripcion',release_year,default,NULL,rental_duration,rental_rate,length,replacement_cost,rating,special_features,now())
+
+
+2 Inserta dos nuevos actores.
+
+INSERT INTO actor VALUE(default,'Kiezmi','De Miguel',default),(default,'Ivan','Martinez',default)
+
+
+3 Modifica el apellido de la actriz UMA a THURMAN
+
+UPDATE actor SET last_name='THURMAN' WHERE first_name='UMA';
+
+
+4 Elimina los dos actores que has creado.
+
+DELETE From actor WHERE first_name="Ivan" OR first_name="Kiezmi";
+
+
+5 Comprueba que ocurre si intentamos realizar la siguiente sentencia
+
+delete from customer where customer_id=10	
+
+Error Code: 1451. Cannot delete or update a parent row: a foreign key constraint fails (`sakila`.`payment`, CONSTRAINT `fk_payment_customer` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON UPDATE CASCADE)
+
+No podemos borrar un elemento que es clave foranea
