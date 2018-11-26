@@ -1,0 +1,21 @@
+version: '2'
+services:
+ rabbit:
+   image: rabbitmq
+   environment:
+     RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLMN EQG"
+     RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+     RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+     RABBITMQ_DEFAULT_VHOST: "/"
+   ports:
+     - 15672:15672
+     - 5672:5672
+   volumes:
+     - ./enabled_plugin:/etc/rabbitmq/enabled_plugins
+ mysql:
+   image: mysql
+   environment:
+     MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+     MYSQL_DATABASE: ${MYSQL_DATABASE}
+     MYSQL_USER: ${MYSQL_USER}
+     MYSQL_PASSWORD: ${MYSQL_PASSWORD}
