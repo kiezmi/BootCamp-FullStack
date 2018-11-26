@@ -1,0 +1,23 @@
+#!/bin/bash
+
+dt=`date +%y%m%d`
+#Tendremos que mostrar por pantalla todos los procesos para informar al usuario
+
+#Borramos/Movemos de forma recursiva todos los logs antiguos
+echo "Movemos el archivo process a la carpeta log bajo el nombre de fecha"
+mv  process.log /logs/$dt.txt
+#Creamos carpeta de logs
+echo "Creamos el directorio logs"
+mkdir -v logs 
+#Creamos el archivo process.log
+echo "Nos movemos a la carpeta logs"
+cd logs
+echo "Creamos el archivo process.log"
+touch process.log
+#Leer los procesos, contarlos y escribirlos dentro de los logs
+echo "Leemos los procesos y los guardamos en el archivo process.log"
+ps -aux > process.log
+ps -aux | wc -l >> process.log
+#Imprimir archivo final para ver el resultado
+echo "archivo final"
+cat process.log
